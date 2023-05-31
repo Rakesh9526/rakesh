@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div >
+  <table style="width:100%;text-align:center;">
+    <h1 style="text-align:center;">Student details</h1>
+    <tr>
+      <th>STUDENT NAME</th>
+      <th>STUDENT AGE</th>
+      <th>STUDENT MOBILE NUMBER</th>
+      <th>PROFILE IMAGE</th>
+      <th>OPTIONS</th>
+
+    </tr>
+
+    {% for i in data %}
+    <tr>
+      <td>{{i.Name}}</td>
+      <td>{{i.Age}}</td>
+      <td>{{i.Mobile_number}}</td>
+      <td>
+        <img src="{{i.Image.url}}" width="100px" height="100px">
+      </td>
+      <td>
+      <form  action="{% url 'editpage' dataid=i.id%}">
+        <button type="submit">Edit</button>
+      </form>
+      </td>
+      <td>
+        <form action="{% url 'deletestudent'  dataid=i.id%}" >
+          <button type="submit">Delete</button>
+        </form>
+      </td>
+
+
+    </tr>
+    {% endfor %}
+
+
+
+
+
+
+
+
+  </table>
+
+
+
+
+
+
+
+</div>
+
+</body>
+</html>

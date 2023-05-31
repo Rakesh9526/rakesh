@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form  method="post" action="{%  url 'savestudent' %}" enctype="multipart/form-data">
+    {%csrf_token%}
+    <h1>Student Details</h1>
+    <label>Enter Name:</label>
+    <input type="text"   placeholder="name"   name="name">
+    <label>Enter Age:</label>
+    <input type="text"   placeholder="age"   name="age">
+    <label>Enter Mobile No:</label>
+    <input type="text"   placeholder="mob no"   name="mobile">
+    <label>Insert Image:</label>
+    <input type="file"   placeholder="upload img"   name="img">
+
+    <button type="submit">Okay</button>
+
+
+
+
+
+</form>
+
+</body>
+</html>

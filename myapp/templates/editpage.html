@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" action="{%  url 'updatestudent' dataid=data.id%}" enctype="multipart/form-data">
+    {%csrf_token%}
+<h1>Edit details</h1>
+<label>Enter Name:</label>
+    <input type="text"   placeholder="name"   name="name" value="{{data.Name}}">
+    <label>Enter Age:</label>
+    <input type="text"   placeholder="age"   name="age"  value="{{data.Age}}">
+    <label>Enter Mobile No:</label>
+    <input type="text"   placeholder="mob no"   name="mobile"  value="{{data.Mobile_number}}">
+    <label>Insert Image:</label>
+    <input type="file"  name="img" >
+<img src="{{data.Image.url}}" width="100px" height="100px">
+
+ <button type="submit">Update</button>
+</form>
+</body>
+</html>
